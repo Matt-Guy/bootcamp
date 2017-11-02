@@ -1,0 +1,4 @@
+var howManyHundreds = function(number)
+{
+
+}
