@@ -1,22 +1,38 @@
 <!DOCTYPE html>
+
+
+
+
+
+
 <html lang="en">
-<head>
-  <title>TinyApp</title>
-</head>
+  <head>
+    <title>TinyApp</title>
+  </head>
+
+
 <body>
 
-<ul>
 
-<li>
+<header><font size="6">Short URL is</font> ->   <font size="5"><b><%= shortURL %></b></font></header>
 
-<%= urlDatabase[shortURL] %>
-<%= shortURL %>
-</li>
- <li>
+  <ul>
 
-  </li>
+    <li style="list-style-type: none;">
 
-</ul>
+
+
+     <form action="/urls/<%= shortURL %>/update" method="POST" style="margin:50px;">
+
+
+      <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 325px" value="<%= urlDatabase[shortURL] %>">
+      <input type="submit" formaction="/urls" value="Update">
+
+    </form>
+
+    </li>
+
+  </ul>
 
     <!-- Add your EJS code here -->
 </body>

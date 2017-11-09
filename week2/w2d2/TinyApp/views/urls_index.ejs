@@ -1,22 +1,38 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
-<head>
-  <title>TinyApp</title>
-</head>
-<body>
-<ul>
+    <head>
+      <title>TinyApp</title>
+    </head>
 
- <li>
-<% for ( key in urls ){%>
-<%= key %>
-<%= key[urls]%>
-<% } %>
-</li>
-</ul>
 
-<a href="">Link
-</a>
+  <body>
+
+    <header><b><font size="12">Current URLs</font></b></header>
+
+      <ul>
+
+      <% for ( key in urlDatabase ){%>
+          <li style="list-style-type: none;"> <%= key %>
+          <%= urlDatabase[key]%>
+
+          <form action="/urls/<%= key %>/delete" method="POST" style="margin:20px;">
+          <input type="submit" value="Delete">
+          <a href="/urls/<%= key %>">Edit</a>
+          </form>
+
+
+          </li>
+      <% } %>
+
+
+
+      </ul>
+
 
     <!-- Add your EJS code here -->
-</body>
+  </body>
+
+
 </html>
